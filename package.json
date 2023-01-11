@@ -1,7 +1,7 @@
 {
   "name": "steamdecky-hq",
   "version": "0.0.1",
-  "description": "A template to quickly create decky plugins from scratch, based on TypeScript and webpack",
+  "description": "Steam Deck HQ Info and Configurations",
   "scripts": {
     "build": "shx rm -rf dist && rollup -c",
     "watch": "rollup -c -w",
@@ -40,6 +40,9 @@
   },
   "dependencies": {
     "decky-frontend-lib": "^3.6.1",
+    "localforage": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0"
   },
   "pnpm": {
