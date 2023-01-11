@@ -1,6 +1,4 @@
 import {
-  ButtonItem,
-  ButtonItemProps,
   DropdownItem,
   PanelSection,
   PanelSectionProps,
@@ -8,7 +6,7 @@ import {
   ToggleField
 } from 'decky-frontend-lib'
 import { FC, ReactNode } from 'react'
-import { clearCache } from '../../cache/sdhqDbCache'
+// import { clearCache } from '../../cache/sdhqDbCache'
 import { useSettings } from '../../context/settingsContext'
 
 type ExtendedPanelSectionProps = PanelSectionProps & {
@@ -22,12 +20,6 @@ type PanelSectionRowProps = {
 }
 
 const DeckPanelSectionRow = PanelSectionRow as FC<PanelSectionRowProps>
-
-type ExtendedButtonItemProps = ButtonItemProps & {
-  children: ReactNode
-}
-
-const DeckButtonItem = ButtonItem as FC<ExtendedButtonItemProps>
 
 const sizeOptions = [
   { data: 0, label: 'Regular', value: 'regular' },
@@ -111,18 +103,6 @@ export default function Index() {
               })
             }}
           />
-        </DeckPanelSectionRow>
-      </DeckPanelSection>
-      <DeckPanelSection title="Caching">
-        <DeckPanelSectionRow>
-          <DeckButtonItem
-            label="Clear the cache to force refresh all SteamDecky Info"
-            bottomSeparator="none"
-            layout="below"
-            onClick={() => clearCache()}
-          >
-            Clear SteamDecky Cache
-          </DeckButtonItem>
         </DeckPanelSectionRow>
       </DeckPanelSection>
     </div>
