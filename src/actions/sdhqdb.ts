@@ -14,7 +14,7 @@ export async function getSDHQTier(
     { body: string; status: number }
   >('http_request', req)
   if (res.success && res.result.status === 200) {
-    return JSON.parse(res.result?.body)[0].acf.sdhq_rating.toString()
+    return JSON.parse(res.result?.body)[0].acf.sdhq_rating.toString().concat('_star')
   }
   return undefined
 }

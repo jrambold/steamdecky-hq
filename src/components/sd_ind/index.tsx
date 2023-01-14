@@ -29,7 +29,7 @@ const positonSettings = {
   br: { bottom: '40px', right: '20px' }
 }
 
-export default function ProtonMedal({
+export default function SDInd({
   serverAPI,
   className
 }: {
