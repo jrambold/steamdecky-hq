@@ -1,6 +1,6 @@
 export default (
   <style>{`
-    .protondb-decky-indicator {
+    .sdhq-indicator {
     border: none;
     position: absolute;
     z-index: 20;
@@ -12,57 +12,57 @@ export default (
     color: black;
     }
 
-    .protondb-decky-indicator.gpfocus, .protondb-decky-indicator:hover {
+    .sdhq-indicator.gpfocus, .sdhq-indicator:hover {
     filter: brightness(1.3);
     }
 
-    .protondb-decky-indicator span {
+    .sdhq-indicator span {
     height: max-content;
     font-family: Abel,"Motiva Sans",Arial,Helvetica,sans-serif;
     }
 
-    .protondb-decky-indicator-platinum {
+    .sdhq-indicator-5_star {
     background: rgb(180, 199, 220);
     color: #000000;
     outline-color: rgb(180, 199, 220);
     }
 
-    .protondb-decky-indicator-gold {
+    .sdhq-indicator-4_star {
     background: rgb(207, 181, 59);
     color: #000000;
     outline-color: rgb(207, 181, 59);
     }
 
-    .protondb-decky-indicator-silver {
+    .sdhq-indicator-3_star {
     background: rgb(166, 166, 166);
     color: #000000;
     outline-color: rgb(166, 166, 166);
     }
 
-    .protondb-decky-indicator-bronze {
+    .sdhq-indicator-2_star {
     background: rgb(205, 127, 50);
     color: #000000;
     outline-color: rgb(205, 127, 50);
     }
 
-    .protondb-decky-indicator-borked {
+    .sdhq-indicator-1_star {
     background: red;
     color: #000000;
     outline-color: red;
     }
 
-    .protondb-decky-indicator-pending {
+    .sdhq-indicator-pending {
     background: rgb(68, 68, 68);
     color: #FFFFFF;
     outline-color: rgb(68, 68, 68);
     }
 
-    .protondb-decky-indicator-regular {
+    .sdhq-indicator-regular {
     flex-direction: row;
     padding: 6px 18px;
     }
 
-    .protondb-decky-indicator-regular > span {
+    .sdhq-indicator-regular > span {
     margin-left: 10px;
     font-size: 24px;
     width: 132px;
@@ -70,12 +70,12 @@ export default (
     margin-right: 28px;
     }
 
-    .protondb-decky-indicator-small {
+    .sdhq-indicator-small {
     flex-direction: column;
     padding: 6px 8px;
     }
 
-    .protondb-decky-indicator-small > span {
+    .sdhq-indicator-small > span {
     margin-left: 0;
     font-size: 12px;
     width: auto;
@@ -84,20 +84,20 @@ export default (
     }
 
 
-    .protondb-decky-indicator-minimalist {
+    .sdhq-indicator-minimalist {
     padding: 6px;
     flex-direction: column;
     }
 
-    .protondb-decky-indicator-minimalist > div{
+    .sdhq-indicator-minimalist > div{
     height: 20px;
     }
 
-    .protondb-decky-indicator-minimalist > span {
+    .sdhq-indicator-minimalist > span {
     display: none;
     }
 
-    .protondb-decky-indicator-label-on-hover.gpfocus > span {
+    .sdhq-indicator-label-on-hover.gpfocus > span {
     display: block;
     }
 `}</style>

@@ -44,13 +44,13 @@ export default function SDInd({
 
   if (!sdhqDBTier) return <></>
 
-  const tierClass = `protondb-decky-indicator-${sdhqDBTier}` as const
-  const sizeClass = `protondb-decky-indicator-${
+  const tierClass = `sdhq-indicator-${sdhqDBTier}` as const
+  const sizeClass = `sdhq-indicator-${
     state.size || 'regular'
   }` as const
 
   const labelOnHoverClass = state.labelOnHover
-    ? 'protondb-decky-indicator-label-on-hover'
+    ? 'sdhq-indicator-label-on-hover'
     : ''
 
   return (
@@ -68,7 +68,7 @@ export default function SDInd({
         }}
       >
         <div>
-          {/* The ProtonDB logo has a distracting background, so React's logo is being used as a close substitute */}
+          {}
           <FaReact size={state.size !== 'regular' ? 20 : 28} />
         </div>
         <span>
