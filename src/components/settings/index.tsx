@@ -30,9 +30,6 @@ const sizeOptions = [
 const positionOptions = [
   { data: 0, label: 'Top Left', value: 'tl' },
   { data: 1, label: 'Top Right', value: 'tr' }
-  // TODO: These can be reenabled once we're properly injecting into topcapsule
-  // { data: 2, label: 'Bottom Left', value: 'bl' },
-  // { data: 3, label: 'Bottom Right', value: 'br' }
 ] as const
 
 export default function Index() {
