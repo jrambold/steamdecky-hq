@@ -9,7 +9,6 @@ localforage.config({
 
 type SDHQDBCache = {
   tier: SDHQDBTier
-  linuxSupport: boolean
   lastUpdated: string
 }
 

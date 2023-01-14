@@ -7,6 +7,7 @@ import { useSettings } from '../../context/settingsContext'
 
 import useAppId from '../../hooks/useAppId'
 import useBadgeData from '../../hooks/useBadgeData'
+import { getSDHQSlug } from '../../actions/sdhqdb'
 
 import { Button, ButtonProps } from '../button'
 
@@ -36,14 +37,14 @@ export default function ProtonMedal({
   className: string
 }): ReactElement {
   const appId = useAppId(serverAPI)
-  const { sdhqDBTier, linuxSupport, refresh } = useBadgeData(serverAPI, appId)
+  const appSlug = getSDHQSlug(serverAPI, appId as string)
+  const { sdhqDBTier, refresh } = useBadgeData(serverAPI, appId)
 
   const { state } = useSettings()
 
   if (!sdhqDBTier) return <></>
 
   const tierClass = `protondb-decky-indicator-${sdhqDBTier}` as const
-  const nativeClass = linuxSupport ? 'protondb-decky-indicator-native' : ''
   const sizeClass = `protondb-decky-indicator-${
     state.size || 'regular'
   }` as const
@@ -56,25 +57,17 @@ export default function ProtonMedal({
     <>
       {style}
       <DeckButton
-        className={`${className} ${tierClass} ${nativeClass} ${sizeClass} ${labelOnHoverClass}`}
+        className={`${className} ${tierClass} ${sizeClass} ${labelOnHoverClass}`}
         type="button"
         onClick={async () => {
           refresh()
-          Router.NavigateToExternalWeb(`https://www.protondb.com/app/${appId}`)
+          Router.NavigateToExternalWeb(`https://steamdeckhq.com/game-reviews/${appSlug}/`)
         }}
         style={{
           ...positonSettings[state.position]
         }}
       >
         <div>
-          {linuxSupport ? (
-            <IoLogoTux
-              size={state.size !== 'regular' ? 20 : 28}
-              style={{ marginRight: 10 }}
-            />
-          ) : (
-            <></>
-          )}
           {/* The ProtonDB logo has a distracting background, so React's logo is being used as a close substitute */}
           <FaReact size={state.size !== 'regular' ? 20 : 28} />
         </div>
