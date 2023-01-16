@@ -37,8 +37,12 @@ export default function SDInd({
   className: string
 }): ReactElement {
   const appId = useAppId(serverAPI)
-  const appSlug = getSDHQSlug(serverAPI, appId as string)
   const { sdhqDBTier, refresh } = useBadgeData(serverAPI, appId)
+
+  var appSlug = ''
+  getSDHQSlug(serverAPI, appId as string).then(data => (appSlug = data)).catch(
+    () => 'pending'
+  )
 
   const { state } = useSettings()
 

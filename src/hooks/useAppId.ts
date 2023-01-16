@@ -1,6 +1,6 @@
 import { ServerAPI } from 'decky-frontend-lib'
 import { useEffect, useState } from 'react'
-import { appTypes } from './constants'
+import { appTypes } from '../constants'
 import { useParams } from './useParams'
 
 function cleanString(str: string) {

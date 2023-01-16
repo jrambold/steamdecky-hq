@@ -18,7 +18,7 @@ export default (
 
     .sdhq-indicator span {
     height: max-content;
-    font-family: Abel,"Motiva Sans",Arial,Helvetica,sans-serif;
+    font-family: Arial,Helvetica,sans-serif;
     }
 
     .sdhq-indicator-5_star {
@@ -82,7 +82,6 @@ export default (
     line-height: 12px;
     margin-right: 0;
     }
-
 
     .sdhq-indicator-minimalist {
     padding: 6px;

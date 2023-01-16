@@ -19,7 +19,7 @@ export default definePlugin((serverApi: ServerAPI) => {
     ),
     icon: <FaShip />,
     onDismount() {
-      serverApi.routerHook.removeRoute("/steamdecky-hq");
+      serverApi.routerHook.removePatch('/library/app/:appid', libraryPatch)
     },
   };
 });

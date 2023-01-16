@@ -14,7 +14,7 @@ export async function getSDHQTier(
     { body: string; status: number }
   >('http_request', req)
   if (res.success && res.result.status === 200) {
-    return JSON.parse(res.result?.body)[0].acf.sdhq_rating.toString().concat('_star')
+    return JSON.parse(res.result?.body)?.['0']?.acf?.sdhq_rating.toString().concat('_star')
   }
   return undefined
 }
@@ -22,7 +22,7 @@ export async function getSDHQTier(
 export async function getSDHQSlug(
   serverAPI: ServerAPI,
   appId: string
-): Promise<SDHQDBTier | undefined> {
+): Promise<string> {
   const req = {
     method: 'GET',
     url: `https://steamdeckhq.com/wp-json/wp/v2/game-reviews/?meta_key=steam_app_id&meta_value=${appId}`
@@ -32,9 +32,9 @@ export async function getSDHQSlug(
     { body: string; status: number }
   >('http_request', req)
   if (res.success && res.result.status === 200) {
-    return JSON.parse(res.result?.body)[0].guid.slug
+    return JSON.parse(res.result?.body)?.['0']?.slug
   }
-  return undefined
+  return ''
 }
 
 
@@ -51,7 +51,7 @@ export async function getSDHQInfo(
     { body: string; status: number }
   >('http_request', req)
   if (res.success && res.result.status === 200) {
-    return JSON.parse(res.result?.body)[0]
+    return JSON.parse(res.result?.body)?.['0']
   }
   return undefined
 }
